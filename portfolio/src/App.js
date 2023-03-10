@@ -1,6 +1,7 @@
 import React from "react";
-import pageContainer from "./components/pageContainer";
+import PageContainer from "./components/PageContainer";
 
-const App = () => <pageContainer />;
+
+const App = () => <PageContainer />;
 
 export default App;

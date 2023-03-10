@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import NavTabs from './nav';
-import AboutMe from './pages/AboutMe';
-import Contact from './pages/Contact';
-import Portfolio from './pages/Portfolio';
-import Resume from './pages/Resume';
+import Header from './Header';
+import AboutMe from './AboutMe';
+import Contact from './Contact';
+import Portfolio from './Portfolio';
+import Resume from './Resume';
+import Footer from './Footer';
+{import('tailwindcss').Config};
 
-export default function pageContainer() {
+export default function PageContainer() {
   const [currentPage, setCurrentPage] = useState('aboutMe');
 
   // This method is checking to see what the value of `currentPage` is. Depending on the value of currentPage, we return the corresponding component to render.
@@ -27,7 +29,8 @@ export default function pageContainer() {
   return (
     <div>
       {/* We are passing the currentPage from state and the function to update it */}
-      <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
+      <Header currentPage={currentPage} handlePageChange={handlePageChange} />
+      <Footer />
       {/* Here we are calling the renderPage method which will return a component  */}
       {renderPage()}
     </div>
